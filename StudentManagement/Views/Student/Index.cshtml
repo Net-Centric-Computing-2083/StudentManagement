@@ -1,0 +1,35 @@
+﻿@model List<StudentManagement.Models.Student>
+
+@{
+    ViewData["Title"] = "Student List";
+}
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Batch</th>
+            <th>Faculty</th>
+            <th>ContactNumber</th>
+            <th>Email</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var student in Model)
+        {
+            <tr>
+                <td>@student.Id</td>
+                <td>@student.Name</td>
+                <td>@student.Batch</td>
+                <td>@student.Faculty</td>
+                <td>@student.ContactNumber</td>
+                <td>@student.Email</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@student.Id">Edit</a> |
+                    <a asp-action="Delete" asp-route-id="@student.Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

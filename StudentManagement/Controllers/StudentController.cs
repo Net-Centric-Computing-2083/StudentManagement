@@ -5,9 +5,14 @@ namespace StudentManagement.Controllers
     public class StudentController : Controller
     {
         private readonly StudentRepository studentRepository;
+
+        public StudentController(StudentRepository studentRepository)
+        {
+            this.studentRepository = studentRepository;
+        }
         public IActionResult Index()
         {
-            var result = studentRepository;
+            var result = studentRepository.GetAll();
             return View(result);
             //return Json(result);
         }
