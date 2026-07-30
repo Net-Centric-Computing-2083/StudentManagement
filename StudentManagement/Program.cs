@@ -1,7 +1,12 @@
+using StudentManagement;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+//Dependency Injection
+builder.Services.AddSingleton<StudentRepository>();
 
 var app = builder.Build();
 
