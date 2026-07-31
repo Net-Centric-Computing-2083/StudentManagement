@@ -25,5 +25,13 @@ namespace StudentManagement.Controllers
             //return File("path/to/file.txt", "text/plain");
             //return View();
         }
+        public IActionResult Delete()
+        {
+            return Content("This is studentRepository delete page");
+        }
+        public IActionResult Edit()
+        {
+            return Content("This is edit page");
+        }
     }
 }
